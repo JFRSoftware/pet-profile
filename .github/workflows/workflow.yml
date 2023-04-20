@@ -10,20 +10,18 @@ jobs:
     name: Unit tests
     runs-on: ubuntu-latest
     
-    steps:
+    build:
       #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '17'
-          cache: 'maven'
+          cache: maven
 
       - name: Cache Maven packages
         run: mvn -B package --file pom.xml
 
-      - name: Run test
-        run: mvn -B test
-
       - name: Build application
         run: mvn clean install
+
