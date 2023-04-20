@@ -39,6 +39,10 @@
 <!--            <artifactId>postgresql</artifactId>-->
 <!--            <scope>runtime</scope>-->
 <!--        </dependency>-->
+        <properties>
+        <sonar.organization>jfrsoftware</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        </properties>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
