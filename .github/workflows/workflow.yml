@@ -22,6 +22,8 @@ jobs:
         run: mvn --batch-mode --update-snapshots package
 
   test:
+    runs-on: ubuntu-latest
+
     needs: build-enviroment
     steps:
       - uses: actions/checkout@v3
@@ -35,6 +37,8 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
 
   packing:
+    runs-on: ubuntu-latest
+
     needs: test
     steps:
       - uses: actions/checkout@v3
